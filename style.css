@@ -3,18 +3,18 @@ body {
     padding: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background: linear-gradient(150deg, #e2e2e2, #6dd1f0);
-    height: 100vh; /* Ajustado para que cubra toda la ventana */
+    height: 100vh;
 }
 
 .formulario {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Centrando el formulario */
-    width: 500px; /* Hacerlo más ancho */
+    transform: translate(-50%, -50%);
+    width: 500px;
     background: white;
     border-radius: 8px;
-    padding: 20px; /* Más espacio dentro del formulario */
+    padding: 20px;
     box-sizing: border-box;
 }
 
@@ -28,16 +28,16 @@ h1 {
 form .username, form .contraseña {
     position: relative;
     border-bottom: 2px solid #adadad;
-    margin-bottom: 30px; /* Aumentando el espacio entre campos */
+    margin-bottom: 30px;
 }
 
 .username input, .contraseña input {
     width: 100%;
-    padding: 10px 5px; /* Más espacio interno */
-    height: 50px; /* Haciendo los campos más largos */
-    font-size: 16px; /* Manteniendo el tamaño de letra original */
-    border: none; /* Sin borde */
-    background: none; /* Fondo transparente */
+    padding: 10px 5px;
+    height: 50px;
+    font-size: 16px;
+    border: none;
+    background: none;
     outline: none;
 }
 
@@ -49,26 +49,33 @@ form .username, form .contraseña {
     transform: translateY(-50%);
     font-size: 16px;
     pointer-events: none;
+    transition: 0.3s ease; /* Añadir transición */
 }
 
-.username input:focus + label, .contraseña input:focus + label {
-    color: #007bff; /* Color de la etiqueta al enfocar el campo */
+/* Subir la etiqueta cuando el campo está en foco o contiene texto */
+.username input:focus + label,
+.username input:not(:placeholder-shown) + label,
+.contraseña input:focus + label,
+.contraseña input:not(:placeholder-shown) + label {
+    top: -10px; /* Mueve la etiqueta hacia arriba */
+    font-size: 12px; /* Reduce el tamaño de la etiqueta */
+    color: #007bff; /* Cambia el color de la etiqueta */
 }
 
 input[type="submit"] {
     width: 100%;
-    height: 50px; /* Aumentando la altura del botón */
+    height: 50px;
     background-color: #007bff;
     border: none;
     color: white;
-    font-size: 16px; /* Manteniendo el tamaño de letra original */
+    font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
 input[type="submit"]:hover {
-    background-color: #0056b3; /* Efecto hover para el botón */
+    background-color: #0056b3;
 }
 
 .recordar, .registro {
@@ -85,3 +92,4 @@ input[type="submit"]:hover {
 .recordar a:hover, .registro a:hover {
     text-decoration: underline;
 }
+
